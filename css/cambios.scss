@@ -1,0 +1,185 @@
+* {
+    padding: 0%; 
+    margin: 0%;
+}
+
+.conteinter-avatar {
+    width: 100%;
+    background-color: white;
+    height: 300px;
+    margin-top: -100px;
+}
+
+#pregunta-general {
+    margin-top: 170px;
+}
+.parrafo-emocion {
+    font-size: 50px;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.nombre-emocion {
+    font-size: 40px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+}
+
+#termometro1 {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.emocion-termometro {
+    display: flex;
+}
+.parrafo-valor {
+    font-size: 28px;
+}
+.valor-numero {
+
+    width: 78px;
+    height: 28px;
+}
+.validar {
+    margin-left: 10px;
+}
+.ter1 {
+    margin-left: 15px;
+   
+    height: 100px;
+    width: 200px;
+}
+
+.continuar {
+    width: 200px;
+    height: 50px;
+}
+
+.parrafo-relajacion {
+    font-size: 20px;
+}
+.cambios {
+    font-size: 40px;
+    margin-top: 50px;
+}
+
+.botones {
+    display: inline-block;
+    font-size: 40px;
+    margin-top: 80px;
+}
+.si {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+.no {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.eficacia {
+    width: 190px;
+    height: 60px;
+    margin-top: 20px;
+}
+
+.pensamiento {
+    margin-top: 50px;
+    width: 350px;
+    height: 50px;
+    margin-left: -12px;
+}
+
+.boton-ir-registro {
+    width: 200px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+
+.pensamientos {
+    margin-top: 20px;
+    width: 300px;
+    height: 50px;
+}
+
+.cuadro2 {
+    margin-top: 30px;
+}
+
+#boton-ir-evaluacion {
+    margin-top: 30px;
+}
+.parrafo-dialogo {
+    font-size: 30px;
+}
+
+.dialogo-socratico {
+    font-size: 20px;
+}
+
+#boton-ir-alternativo {
+    margin-top: 20px;
+}
+
+.pensamiento-alternativo {
+    width: 350px;
+    height: 50px;
+    margin-left: -12px;
+}
+
+#boton-ir-eficacia {
+    margin-top: 30px;
+}
+
+.parrafo-alternativo {
+    font-size: 35px;
+}
+
+.parrafo-recuerdo {
+    font-size: 25px;
+}
+
+.parrafo-evidencia {
+    font-size: 25px;
+}
+
+.parrafo-sensacion-final {
+    font-size: 28px;
+}
+
+.parrafo-reevaluacion {
+    font-size: 28px;
+}
+
+.parrafo-final {
+    font-size: 30px;
+}
+
+
+@media (min-width: 1170px) {
+    .nombre-emocion {
+        text-align: center;
+    }
+    .emocion-termometro {
+        margin-left: 200px;
+    }
+    .table {
+        margin-left: 20px;
+    }
+}
+
