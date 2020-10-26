@@ -74,13 +74,20 @@ onclick = "javascript:window.location.reload()";
 
 //CHANGES IN DOM
 
+function globoDialogo () {
+  
+  document.getElementById ('saludo').innerHTML = 'empecemos! qué emoción sientes hoy?';
+  
+  }
+  setTimeout (globoDialogo, 3000);
+
+
 let emocion1 = document.getElementById('frustracion');
 emocion1.addEventListener('click', function mostrarTermometros() {
   document.getElementById('portfolioModal1').hidden = false;
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img1').hidden = false;
 });
-
 
 let emocion2 = document.getElementById('miedo');
 emocion2.addEventListener('click', function mostrarTermometros() {
@@ -155,14 +162,169 @@ botonValidar.addEventListener('click', function () {
   }
 })
 
-const mostrarPantallaCambio = () => {
-  document.getElementById('modal-content-cambio').hidden = false;
-  document.getElementById('modal-content-nuevo').hidden = true;
+const mostrarPantallaPractica = () => {
+  document.getElementById ('modal-content-practica').hidden = false;
+  document.getElementById ('modal-content-nuevo').hidden = true;
 }
 
-let botonContinuar = document.getElementById('continuar');
-botonContinuar.addEventListener('click', mostrarPantallaCambio);
+let botonAvanzar = document.getElementById ('siguiente');
+botonAvanzar.addEventListener ('click', mostrarPantallaPractica);
 
+
+
+const mostrarPantallaAbdominal = () => {
+  document.getElementById ('modal-content-practica').hidden = true;
+  document.getElementById ('modal-content-abdominal').hidden = false;
+}
+
+let botonAbdominal = document.getElementById ('abdominal');
+botonAbdominal.addEventListener ('click', mostrarPantallaAbdominal);
+
+const escucharAudioAbdominal = () => {
+
+  let cargandoPagina = document.createElement ('p');
+  cargandoPagina.innerHTML = 'Cargando. Puede tardar unos segundos';
+  cargandoPagina.classList.add ('loading');
+  document.getElementById ('loading-context').appendChild (cargandoPagina);
+
+  let audio1 = document.createElement ('audio');
+  audio1.src = "/assets/audios/Respiración abdominal - con música de fondo.mp3";
+  audio1.play();
+  document.getElementById ('audio1').appendChild (audio1);
+
+  const finalizarAudio = () => {
+    audio1.pause();
+  }
+
+  let detenerAudio = document.getElementById ('continuar');
+  detenerAudio.addEventListener ('click',finalizarAudio);
+  
+  setTimeout(function(){ 
+    cargandoPagina.style.display = 'none'; }, 3000);
+}
+
+let prenderAudio = document.getElementById ('boton-audio1');
+prenderAudio.addEventListener ('click',escucharAudioAbdominal);
+
+
+
+const mostrarPantallaImaginario = () => {
+  document.getElementById ('modal-content-practica').hidden = true;
+  document.getElementById ('modal-content-imaginario').hidden = false;
+}
+
+let botonImaginario = document.getElementById ('imaginario');
+botonImaginario.addEventListener ('click', mostrarPantallaImaginario);
+
+const escucharAudio = () => {
+
+  let cargandoPagina2 = document.createElement ('p');
+  cargandoPagina2.innerHTML = 'Cargando. Puede tardar unos segundos';
+  cargandoPagina2.classList.add ('loading');
+  document.getElementById ('loading-context2').appendChild (cargandoPagina2);
+
+  let audio = document.createElement ('audio');
+  audio.src = "/assets/audios/Viaje imaginario El Árbol - con música de fondo.mp3";
+  audio.play();
+  document.getElementById ('audio').appendChild (audio);
+
+  const FinAudio = () => {
+    audio.pause();
+  }
+
+  let frenarAudio = document.getElementById ('continuar2');
+  frenarAudio.addEventListener ('click',FinAudio);
+
+  setTimeout(function(){ 
+  cargandoPagina2.style.display = 'none'; }, 3000);
+}
+
+let botonAudio = document.getElementById ('boton-audio');
+botonAudio.addEventListener ('click',escucharAudio);
+
+
+
+const mostrarPantallaProgresiva = () => {
+  document.getElementById ('modal-content-practica').hidden = true;
+  document.getElementById ('modal-content-progresiva').hidden = false;
+}
+
+let botonProgresiva = document.getElementById ('progresiva');
+botonProgresiva.addEventListener ('click', mostrarPantallaProgresiva);
+
+
+
+const escucharAudioRmp = () => {
+  let cargandoPagina3 = document.createElement ('p');
+  cargandoPagina3.innerHTML = 'Cargando. Puede tardar unos segundos';
+  cargandoPagina3.classList.add ('loading');
+  document.getElementById ('loading-context3').appendChild (cargandoPagina3);
+
+  let audio2 = document.createElement ('audio');
+  audio2.src = "/assets/audios/RMP breve - con música de fondo.mp3";
+  audio2.play();
+  document.getElementById ('audio3').appendChild (audio2);
+
+  const finalizarAudioRmp = () => {
+    audio2.pause();
+  }
+
+  let stopAudio = document.getElementById ('continuar3');
+  stopAudio.addEventListener ('click',finalizarAudioRmp);
+
+  setTimeout(function(){ 
+  cargandoPagina3.style.display = 'none'; }, 3000);
+}
+
+let playAudio = document.getElementById ('boton-audio2');
+playAudio.addEventListener ('click',escucharAudioRmp);
+
+const mostrarPantallaLogro = () => {
+  document.getElementById('modal-content-ejer-respiracion').hidden = false;
+  document.getElementById('modal-content-abdominal').hidden = true;
+}
+let botonContinuar = document.getElementById('continuar');
+botonContinuar.addEventListener('click', mostrarPantallaLogro);
+
+
+const mostrarPantallaLogro2 = () => {
+  document.getElementById('modal-content-ejer-respiracion').hidden = false;
+  document.getElementById('modal-content-imaginario').hidden = true;
+}
+
+let botCont = document.getElementById('continuar2');
+botCont.addEventListener('click', mostrarPantallaLogro2);
+
+
+const mostrarPantallaLogro3 = () => {
+  document.getElementById('modal-content-ejer-respiracion').hidden = false;
+  document.getElementById('modal-content-progresiva').hidden = true;
+}
+let botContinuar = document.getElementById('continuar3');
+botContinuar.addEventListener('click', mostrarPantallaLogro3);
+
+
+const mostrarPantallaPreguntaCambio = () => {
+  document.getElementById ('modal-content-ejer-respiracion').hidden = true;
+  document.getElementById ('modal-content-cambio').hidden = false;
+}
+
+let botonACambio = document.getElementById ('ir-a-pregunta-cambio');
+botonACambio.addEventListener ('click', mostrarPantallaPreguntaCambio);
+
+function mensajeChange() {
+  
+  const mensaje = document.getElementById("valor-numero");
+  const boton = document.getElementById("validar");
+  
+  
+  if (mensaje.value.trim() !== "") {
+   
+    boton.removeAttribute('disabled')
+  } else {
+    boton.setAttribute('disabled', "true");
+  }
+}
 
 
 const mostrarPantallaCambios = () => {
@@ -171,22 +333,111 @@ const mostrarPantallaCambios = () => {
 }
 
 
-const mostrarPantallaResolucion = () => {
-  document.getElementById('modal-content-resolucion').hidden = false;
-  document.getElementById('modal-content-cambio').hidden = true;
+const mostrarBotonesNuevos = () => {
+
+  let parrafoCambios = document.createElement ('p');
+  parrafoCambios. innerHTML = 'Qué puedo cambiar?';
+  document.getElementById ('modal-content-botones').appendChild (parrafoCambios);
+  parrafoCambios.classList.add ('cambios2');
+
+
+  let botonNuevo = document.createElement ('button');
+  botonNuevo.innerHTML = 'SITUACIÓN';
+  document.getElementById ('modal-content-botones').appendChild (botonNuevo);
+  botonNuevo.classList.add ('botones-nuevos');
+
+  let botonNuevo2 = document.createElement ('button');
+  botonNuevo2.innerHTML = 'CONTEXTO';
+  document.getElementById ('modal-content-botones').appendChild (botonNuevo2);
+  botonNuevo2.classList.add ('botones-nuevos');
+
+  let botonNuevo3 = document.createElement ('button');
+  botonNuevo3.innerHTML = 'REACCIÓN';
+  document.getElementById ('modal-content-botones').appendChild (botonNuevo3);
+  botonNuevo3.classList.add ('botones-nuevos');
+
+  botonNuevo3.addEventListener ('click', mostrarPantallaRegistro);
+
+  botonNuevo.addEventListener ('click', mostrarPantallaResolucion);
+  botonNuevo2.addEventListener ('click', mostrarPantallaResolucion);
 }
 
 let botonSi = document.getElementById('si');
-botonSi.addEventListener('click', mostrarPantallaResolucion);
+botonSi.addEventListener('click', mostrarBotonesNuevos);
+
+const mostrarPantallaResolucion = () => {
+  document.getElementById ('modal-content-cambio').hidden = true;
+  document.getElementById ('modal-content-resolucion').hidden = false;
+}
+
+const mostrarPantallaEjercicioResolucion = () => {
+  document.getElementById ('modal-content-resolucion').hidden = true;
+  document.getElementById ('modal-content-resolucion-identificar').hidden = false; 
+}
+
+let botonSeguir = document.getElementById ('seguir1');
+botonSeguir.addEventListener ('click', mostrarPantallaEjercicioResolucion);
+
+
+const mostrarPantallaEjercicioResolucion2 = () => {
+  document.getElementById ('modal-content-resolucion-ideas').hidden = false; 
+}
+
+let botonSeguir2 = document.getElementById ('seguir2');
+botonSeguir2.addEventListener ('click', mostrarPantallaEjercicioResolucion2);
+
+
+const mostrarPantallaEjercicioResolucion3 = () => {
+  document.getElementById ('modal-content-resolucion-alternativas').hidden = false; 
+}
+
+let botonSeguir3 = document.getElementById ('seguir3');
+botonSeguir3.addEventListener ('click', mostrarPantallaEjercicioResolucion3);
+
+const mostrarPantallaEjercicioResolucion4 = () => {
+  document.getElementById ('modal-content-resolucion-soluciones').hidden = false; 
+}
+
+let botonSeguir4 = document.getElementById ('seguir4');
+botonSeguir4.addEventListener ('click', mostrarPantallaEjercicioResolucion4);
+
+const mostrarPantallaEjercicioResolucion5 = () => {
+  document.getElementById ('modal-content-resolucion-eficacia').hidden = false; 
+}
+
+let botonSeguir5 = document.getElementById ('seguir5');
+botonSeguir5.addEventListener ('click', mostrarPantallaEjercicioResolucion5);
+
+
 
 
 const mostrarPantallaEficacia = () => {
-  document.getElementById('modal-content-eficacia').hidden = false;
-  document.getElementById('modal-content-resolucion').hidden = true;
+  document.getElementById ('modal-content-eficacia').hidden = false; 
+  document.getElementById ('modal-content-resolucion-eficacia').hidden = true; 
+  document.getElementById ('modal-content-resolucion-soluciones').hidden = true;
+  document.getElementById ('modal-content-resolucion-alternativas').hidden = true; 
+  document.getElementById ('modal-content-resolucion-ideas').hidden = true; 
+  document.getElementById ('modal-content-resolucion-identificar').hidden = true;
 }
 
-let botonEficacia = document.getElementById('eficacia');
-botonEficacia.addEventListener('click', mostrarPantallaEficacia);
+let botonSiEficacia = document.getElementById ('boton-yes');
+botonSiEficacia.addEventListener ('click', mostrarPantallaEficacia);
+
+
+
+
+const mostrarPantallaSoluciones = () => {
+  document.getElementById ('modal-content-resolucion-soluciones').hidden = false;
+  document.getElementById ('modal-content-resolucion-eficacia').hidden = true; 
+  document.getElementById ('modal-content-resolucion-alternativas').hidden = true; 
+  document.getElementById ('modal-content-resolucion-ideas').hidden = true; 
+  document.getElementById ('modal-content-resolucion-identificar').hidden = true;
+  document.getElementById ('modal-content-eficacia').hidden = true;
+}
+
+let botonNoEficacia = document.getElementById ('boton-no');
+botonNoEficacia.addEventListener ('click', mostrarPantallaSoluciones);
+
 
 
 const mostrarPantallaAceptacion = () => {
@@ -199,14 +450,43 @@ botonNo.addEventListener('click', mostrarPantallaAceptacion);
 
 
 
-const mostrarPantallaRegistro = () => {
+const mostrarPantallaEjerAceptacion = () => {
   document.getElementById('modal-content-aceptacion').hidden = true;
-  document.getElementById('modal-content-registro').hidden = false;
+  document.getElementById('modal-content-ejer-aceptacion').hidden = false;
 }
 
-let botonRegistro = document.getElementById('registro');
-botonRegistro.addEventListener('click', mostrarPantallaRegistro);
+let botonEjercicio = document.getElementById('ejercicio');
+botonEjercicio.addEventListener('click', mostrarPantallaEjerAceptacion);
 
+
+const mostrarPantallaAceptacion2 = () => {
+  document.getElementById ('modal-content-ejer-aceptacion').hidden = true;
+  document.getElementById ('modal-content-ejer-aceptacion2').hidden = false;
+}
+
+let buttonSi = document.getElementById ('button-si');
+buttonSi.addEventListener ('click', mostrarPantallaAceptacion2);
+
+const mostrarPantallaRegistro = () => {
+  document.getElementById ('modal-content-ejer-aceptacion').hidden = true;
+  document.getElementById ('modal-content-registro').hidden = false;
+  document.getElementById ('modal-content-cambio').hidden = true;
+  document.getElementById ('modal-content-eficacia-aceptacion').hidden = true;
+}
+
+let buttonNo = document.getElementById ('button-no');
+buttonNo.addEventListener ('click', mostrarPantallaRegistro);
+
+let botonARegistro = document.getElementById ('ir-a-registro');
+botonARegistro.addEventListener ('click', mostrarPantallaRegistro);
+
+const mostrarPantallaEficaciaAceptacion = () => {
+  document.getElementById ('modal-content-ejer-aceptacion2').hidden = true;
+  document.getElementById ('modal-content-eficacia-aceptacion').hidden = false;
+}
+
+let buttonContinuar = document.getElementById ('continuar4');
+buttonContinuar.addEventListener ('click', mostrarPantallaEficaciaAceptacion);
 
 
 const mostrarPantallaEvidencia = () => {
@@ -219,17 +499,10 @@ let botonEvidencia = document.getElementById('boton-ir-registro');
 botonEvidencia.addEventListener('click', mostrarPantallaEvidencia)
 
 
-const mostrarPantallaEvaluacion = () => {
-  document.getElementById('modal-content-evidencia').hidden = true;
-  document.getElementById('modal-content-evaluacion').hidden = false;
-}
-
-let botonEvaluar = document.getElementById('boton-ir-evaluacion');
-botonEvaluar.addEventListener('click', mostrarPantallaEvaluacion);
 
 const mostrarPantallaDialogo = () => {
   document.getElementById('modal-content-dialogo').hidden = false;
-  document.getElementById('modal-content-evaluacion').hidden = true;
+  document.getElementById('modal-content-evidencia').hidden = true;
 }
 
 let botonYes = document.getElementById('yes');
@@ -267,7 +540,19 @@ botonValidarEmocion.addEventListener('click', function () {
   }
 })
 
-
+function botonChange() {
+  
+  const cambio = document.getElementById("numero-emocion");
+  const botonActivado = document.getElementById("boton-validar");
+  
+  
+  if (cambio.value.trim() !== "") {
+    console.log("Se muestra")
+    botonActivado.removeAttribute('disabled')
+  } else {
+    botonActivado.setAttribute('disabled', "true");
+  }
+}
 
 const mostrarPantallaFelicitaciones = () => {
   document.getElementById('modal-content-felicitaciones').hidden = false;
@@ -293,20 +578,11 @@ let botonNegativo = document.getElementById('negativo');
 botonNegativo.addEventListener('click', mostrarPantallaEvidencia)
 
 
-
-const mostrarPantallaTransformacion = () => {
-  document.getElementById('modal-content-evaluacion').hidden = true;
-  document.getElementById('modal-content-transformacion').hidden = false;
-}
-
-let botonNop = document.getElementById('nop');
-botonNop.addEventListener('click', mostrarPantallaTransformacion);
-
-
 const mostrarPantallaFinal = () => {
   document.getElementById('modal-content-felicitaciones').hidden = true;
   document.getElementById('modal-content-final').hidden = false;
   document.getElementById('modal-content-resolucion2').hidden = true;
+  document.getElementById ('modal-content-eficacia').hidden = true;
 
 };
 
@@ -316,3 +592,21 @@ botonContinuarFin.addEventListener('click', mostrarPantallaFinal);
 
 let botonIrFinal = document.getElementById('boton-ir-final2');
 botonIrFinal.addEventListener('click', mostrarPantallaFinal);
+
+let continuarFinal = document.getElementById ('continuar-final');
+continuarFinal.addEventListener ('click', mostrarPantallaFinal);
+
+
+
+const frases = ["Qué podés agradecer hoy? Escribe tres cosas", 
+"Qué podés hacer hoy para ayudar a alguien? Escribe una acción concreta", 
+"Qué actividad placentera puedo hacer hoy para mí? Escríbela y planifícala para algún momento del día", 
+"Qué verbalización positiva (decir algo agradable) podrías decirte hoy para sentirte mejor? Escribe lo que te dirías y dítelo al menos dos veces en el día"];
+
+const random = Math.floor(Math.random() * frases.length);
+let fraseRandom = document.createElement ('p');
+fraseRandom. innerHTML = frases[random];
+document.getElementById ('final').appendChild (fraseRandom);
+fraseRandom.classList.add ('frase-random');
+
+console.log(random, frases[random]);
