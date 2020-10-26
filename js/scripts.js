@@ -76,12 +76,10 @@ onclick = "javascript:window.location.reload()";
 
 function globoDialogo () {
   
-  document.getElementById ('saludo').innerHTML = 'Para empezar, contame.. Cómo te sentís hoy?';
-  console.log("hola desde javascript");
+  document.getElementById ('saludo').innerHTML = 'empecemos! qué emoción sientes hoy?';
   
   }
-  setTimeout (globoDialogo, 5000);
-  
+  setTimeout (globoDialogo, 3000);
 
 
 let emocion1 = document.getElementById('frustracion');
@@ -90,7 +88,6 @@ emocion1.addEventListener('click', function mostrarTermometros() {
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img1').hidden = false;
 });
-
 
 let emocion2 = document.getElementById('miedo');
 emocion2.addEventListener('click', function mostrarTermometros() {
@@ -173,6 +170,8 @@ const mostrarPantallaPractica = () => {
 let botonAvanzar = document.getElementById ('siguiente');
 botonAvanzar.addEventListener ('click', mostrarPantallaPractica);
 
+
+
 const mostrarPantallaAbdominal = () => {
   document.getElementById ('modal-content-practica').hidden = true;
   document.getElementById ('modal-content-abdominal').hidden = false;
@@ -181,6 +180,34 @@ const mostrarPantallaAbdominal = () => {
 let botonAbdominal = document.getElementById ('abdominal');
 botonAbdominal.addEventListener ('click', mostrarPantallaAbdominal);
 
+const escucharAudioAbdominal = () => {
+
+  let cargandoPagina = document.createElement ('p');
+  cargandoPagina.innerHTML = 'Cargando. Puede tardar unos segundos';
+  cargandoPagina.classList.add ('loading');
+  document.getElementById ('loading-context').appendChild (cargandoPagina);
+
+  let audio1 = document.createElement ('audio');
+  audio1.src = "/assets/audios/Respiración abdominal - con música de fondo.mp3";
+  audio1.play();
+  document.getElementById ('audio1').appendChild (audio1);
+
+  const finalizarAudio = () => {
+    audio1.pause();
+  }
+
+  let detenerAudio = document.getElementById ('continuar');
+  detenerAudio.addEventListener ('click',finalizarAudio);
+  
+  setTimeout(function(){ 
+    cargandoPagina.style.display = 'none'; }, 3000);
+}
+
+let prenderAudio = document.getElementById ('boton-audio1');
+prenderAudio.addEventListener ('click',escucharAudioAbdominal);
+
+
+
 const mostrarPantallaImaginario = () => {
   document.getElementById ('modal-content-practica').hidden = true;
   document.getElementById ('modal-content-imaginario').hidden = false;
@@ -188,6 +215,34 @@ const mostrarPantallaImaginario = () => {
 
 let botonImaginario = document.getElementById ('imaginario');
 botonImaginario.addEventListener ('click', mostrarPantallaImaginario);
+
+const escucharAudio = () => {
+
+  let cargandoPagina2 = document.createElement ('p');
+  cargandoPagina2.innerHTML = 'Cargando. Puede tardar unos segundos';
+  cargandoPagina2.classList.add ('loading');
+  document.getElementById ('loading-context2').appendChild (cargandoPagina2);
+
+  let audio = document.createElement ('audio');
+  audio.src = "/assets/audios/Viaje imaginario El Árbol - con música de fondo.mp3";
+  audio.play();
+  document.getElementById ('audio').appendChild (audio);
+
+  const FinAudio = () => {
+    audio.pause();
+  }
+
+  let frenarAudio = document.getElementById ('continuar2');
+  frenarAudio.addEventListener ('click',FinAudio);
+
+  setTimeout(function(){ 
+  cargandoPagina2.style.display = 'none'; }, 3000);
+}
+
+let botonAudio = document.getElementById ('boton-audio');
+botonAudio.addEventListener ('click',escucharAudio);
+
+
 
 const mostrarPantallaProgresiva = () => {
   document.getElementById ('modal-content-practica').hidden = true;
@@ -199,30 +254,63 @@ botonProgresiva.addEventListener ('click', mostrarPantallaProgresiva);
 
 
 
-const mostrarPantallaCambio = () => {
-  document.getElementById('modal-content-cambio').hidden = false;
+const escucharAudioRmp = () => {
+  let cargandoPagina3 = document.createElement ('p');
+  cargandoPagina3.innerHTML = 'Cargando. Puede tardar unos segundos';
+  cargandoPagina3.classList.add ('loading');
+  document.getElementById ('loading-context3').appendChild (cargandoPagina3);
+
+  let audio2 = document.createElement ('audio');
+  audio2.src = "/assets/audios/RMP breve - con música de fondo.mp3";
+  audio2.play();
+  document.getElementById ('audio3').appendChild (audio2);
+
+  const finalizarAudioRmp = () => {
+    audio2.pause();
+  }
+
+  let stopAudio = document.getElementById ('continuar3');
+  stopAudio.addEventListener ('click',finalizarAudioRmp);
+
+  setTimeout(function(){ 
+  cargandoPagina3.style.display = 'none'; }, 3000);
+}
+
+let playAudio = document.getElementById ('boton-audio2');
+playAudio.addEventListener ('click',escucharAudioRmp);
+
+const mostrarPantallaLogro = () => {
+  document.getElementById('modal-content-ejer-respiracion').hidden = false;
   document.getElementById('modal-content-abdominal').hidden = true;
 }
 let botonContinuar = document.getElementById('continuar');
-botonContinuar.addEventListener('click', mostrarPantallaCambio);
+botonContinuar.addEventListener('click', mostrarPantallaLogro);
 
 
-const mostrarPantallaCambio2 = () => {
-  document.getElementById('modal-content-cambio').hidden = false;
+const mostrarPantallaLogro2 = () => {
+  document.getElementById('modal-content-ejer-respiracion').hidden = false;
   document.getElementById('modal-content-imaginario').hidden = true;
 }
+
 let botCont = document.getElementById('continuar2');
-botCont.addEventListener('click', mostrarPantallaCambio2);
+botCont.addEventListener('click', mostrarPantallaLogro2);
 
 
-const mostrarPantallaCambio3 = () => {
-  document.getElementById('modal-content-cambio').hidden = false;
+const mostrarPantallaLogro3 = () => {
+  document.getElementById('modal-content-ejer-respiracion').hidden = false;
   document.getElementById('modal-content-progresiva').hidden = true;
 }
 let botContinuar = document.getElementById('continuar3');
-botContinuar.addEventListener('click', mostrarPantallaCambio3);
+botContinuar.addEventListener('click', mostrarPantallaLogro3);
 
 
+const mostrarPantallaPreguntaCambio = () => {
+  document.getElementById ('modal-content-ejer-respiracion').hidden = true;
+  document.getElementById ('modal-content-cambio').hidden = false;
+}
+
+let botonACambio = document.getElementById ('ir-a-pregunta-cambio');
+botonACambio.addEventListener ('click', mostrarPantallaPreguntaCambio);
 
 function mensajeChange() {
   
@@ -231,7 +319,7 @@ function mensajeChange() {
   
   
   if (mensaje.value.trim() !== "") {
-    console.log("Se muestra")
+   
     boton.removeAttribute('disabled')
   } else {
     boton.setAttribute('disabled', "true");
@@ -382,17 +470,23 @@ buttonSi.addEventListener ('click', mostrarPantallaAceptacion2);
 const mostrarPantallaRegistro = () => {
   document.getElementById ('modal-content-ejer-aceptacion').hidden = true;
   document.getElementById ('modal-content-registro').hidden = false;
-  document.getElementById ('modal-content-ejer-aceptacion2').hidden = true;
   document.getElementById ('modal-content-cambio').hidden = true;
+  document.getElementById ('modal-content-eficacia-aceptacion').hidden = true;
 }
 
 let buttonNo = document.getElementById ('button-no');
 buttonNo.addEventListener ('click', mostrarPantallaRegistro);
 
+let botonARegistro = document.getElementById ('ir-a-registro');
+botonARegistro.addEventListener ('click', mostrarPantallaRegistro);
 
+const mostrarPantallaEficaciaAceptacion = () => {
+  document.getElementById ('modal-content-ejer-aceptacion2').hidden = true;
+  document.getElementById ('modal-content-eficacia-aceptacion').hidden = false;
+}
 
 let buttonContinuar = document.getElementById ('continuar4');
-buttonContinuar.addEventListener ('click', mostrarPantallaRegistro);
+buttonContinuar.addEventListener ('click', mostrarPantallaEficaciaAceptacion);
 
 
 const mostrarPantallaEvidencia = () => {
@@ -488,6 +582,7 @@ const mostrarPantallaFinal = () => {
   document.getElementById('modal-content-felicitaciones').hidden = true;
   document.getElementById('modal-content-final').hidden = false;
   document.getElementById('modal-content-resolucion2').hidden = true;
+  document.getElementById ('modal-content-eficacia').hidden = true;
 
 };
 
@@ -497,3 +592,21 @@ botonContinuarFin.addEventListener('click', mostrarPantallaFinal);
 
 let botonIrFinal = document.getElementById('boton-ir-final2');
 botonIrFinal.addEventListener('click', mostrarPantallaFinal);
+
+let continuarFinal = document.getElementById ('continuar-final');
+continuarFinal.addEventListener ('click', mostrarPantallaFinal);
+
+
+
+const frases = ["Qué podés agradecer hoy? Escribe tres cosas", 
+"Qué podés hacer hoy para ayudar a alguien? Escribe una acción concreta", 
+"Qué actividad placentera puedo hacer hoy para mí? Escríbela y planifícala para algún momento del día", 
+"Qué verbalización positiva (decir algo agradable) podrías decirte hoy para sentirte mejor? Escribe lo que te dirías y dítelo al menos dos veces en el día"];
+
+const random = Math.floor(Math.random() * frases.length);
+let fraseRandom = document.createElement ('p');
+fraseRandom. innerHTML = frases[random];
+document.getElementById ('final').appendChild (fraseRandom);
+fraseRandom.classList.add ('frase-random');
+
+console.log(random, frases[random]);
