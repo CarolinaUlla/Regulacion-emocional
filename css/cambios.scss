@@ -23,7 +23,7 @@
     margin-top: 40px;
     position: relative;
     height: 120px;
-    width: 270px;
+    width: 290px;
     background: white;
     border-radius: 50%;
     box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5);
@@ -90,6 +90,8 @@
 }
 .parrafo-valor {
     font-size: 28px;
+    color: #2c3e50;
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .valor-numero {
     width: 80px;
@@ -104,6 +106,7 @@
     height: 100px;
     width: 200px;
 }
+
 
 .parrafo-relajacion {
     font-size: 20px;
@@ -144,6 +147,24 @@
     display: flex;
 }
 
+#continuar-final {
+    margin-top: 20px;
+}
+
+#ir-a-registro {
+    margin-top: 20px;
+}
+
+#ir-a-pregunta-cambio {
+    margin-top: 20px;
+}
+.escuchar-audio {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+
+}
+
 #abdominal {
     margin-bottom: 10px;
 }
@@ -160,6 +181,46 @@
     margin-top: 50px;
 }
 
+.loading {
+    font-size: 20px;
+    color: #2c3e50;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.loading:after {
+    content: "...";
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: ellipsis-dot 1s infinite .3s;
+    animation-fill-mode: fowards;
+    width: 1.25em;
+}
+
+@keyframes ellipsis-dot {
+    25% {
+      content: "";
+    }
+    50% {
+      content: ".";
+    }
+    75% {
+      content: "..";
+    }
+    100% {
+      content: "...";
+    }
+}
+
+#continuar2 {
+    margin-top: 70px;
+}
+#continuar {
+    margin-top: 70px;
+}
+#continuar3 {
+    margin-top: 70px;
+}
 .botones-nuevos {
     color: #2c3e50;
     background-color: #eae935;
@@ -243,6 +304,7 @@
 }
 .parrafo-dialogo {
     font-size: 30px;
+    color: #2c3e50;
 }
 
 .dialogo-socratico {
@@ -267,30 +329,40 @@
 
 .parrafo-alternativo {
     font-size: 35px;
+    color: #2c3e50;
 }
 
 .parrafo-recuerdo {
     font-size: 25px;
+    color: #2c3e50;
 }
 
 .parrafo-evidencia {
     font-size: 25px;
+    color: #2c3e50;
 }
 
 .parrafo-sensacion-final {
     font-size: 40px;
     font-weight: 200;
+    color: #2c3e50;
 }
 
 .parrafo-reevaluacion {
     font-size: 28px;
+    color: #2c3e50;
 }
 
 .parrafo-final {
     font-size: 30px;
     font-weight: bold;
+    color: #2c3e50;
 }
 
+.frase-random {
+    color: #2c3e50;
+    font-size: 20px;
+}
 
 @media (min-width: 1170px) {
     #logo-pagina {
@@ -314,4 +386,3 @@
         width: 1300px;
     }
 }
-
