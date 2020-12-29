@@ -2480,7 +2480,7 @@ fieldset:disabled a.btn {
   border-color: #2c3e50;;
 }
 .btn-primary.disabled, .btn-primary:disabled {
-  color: #fff;
+  color: #2c3e50;
   background-color: #eae935;
   border-color: #eae935;
 }
@@ -9946,7 +9946,6 @@ h3 {
 }
 
 .divider-custom {
-  margin: 1.25rem 0 1.5rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -10108,12 +10107,12 @@ h3 {
 }
 
 .portfolio-modal .portfolio-modal-title {
-  font-size: 2.25rem;
+  font-size: 30px;
   line-height: 2rem;
 }
 @media (min-width: 992px) {
   .portfolio-modal .portfolio-modal-title {
-    font-size: 3rem;
+    font-size: 35px;
     line-height: 2.5rem;
   }
 }

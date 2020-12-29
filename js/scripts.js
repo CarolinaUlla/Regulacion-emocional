@@ -75,10 +75,8 @@ onclick = "javascript:window.location.reload()";
 //CHANGES IN DOM
 
 function globoDialogo () {
-  
-  document.getElementById ('saludo').innerHTML = 'empecemos! qué emoción sientes hoy?';
-  
-  }
+  document.getElementById ('saludo').innerHTML = 'Empecemos! Cómo te sientes hoy?';  
+}
   setTimeout (globoDialogo, 3000);
 
 
@@ -87,6 +85,13 @@ emocion1.addEventListener('click', function mostrarTermometros() {
   document.getElementById('portfolioModal1').hidden = false;
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img1').hidden = false;
+  document.getElementById('img2').hidden = true;
+  document.getElementById('img3').hidden = true;
+  document.getElementById('img4').hidden = true;
+  document.getElementById('img5').hidden = true;
+  document.getElementById('img6').hidden = true;
+  document.getElementById('img7').hidden = true;
+  document.getElementById('img8').hidden = true;
 });
 
 let emocion2 = document.getElementById('miedo');
@@ -95,6 +100,13 @@ emocion2.addEventListener('click', function mostrarTermometros() {
   document.getElementById('portfolioModal1').hidden = false;
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img2').hidden = false;
+  document.getElementById('img1').hidden = true;
+  document.getElementById('img3').hidden = true;
+  document.getElementById('img4').hidden = true;
+  document.getElementById('img5').hidden = true;
+  document.getElementById('img6').hidden = true;
+  document.getElementById('img7').hidden = true;
+  document.getElementById('img8').hidden = true;
 });
 
 let emocion3 = document.getElementById('ansiedad');
@@ -102,6 +114,13 @@ emocion3.addEventListener('click', function mostrarTermometros() {
   document.getElementById('portfolioModal1').hidden = false;
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img3').hidden = false;
+  document.getElementById('img2').hidden = true;
+  document.getElementById('img1').hidden = true;
+  document.getElementById('img4').hidden = true;
+  document.getElementById('img5').hidden = true;
+  document.getElementById('img6').hidden = true;
+  document.getElementById('img7').hidden = true;
+  document.getElementById('img8').hidden = true;
 });
 
 let emocion4 = document.getElementById('culpa');
@@ -109,6 +128,13 @@ emocion4.addEventListener('click', function mostrarTermometros() {
   document.getElementById('portfolioModal1').hidden = false;
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img4').hidden = false;
+  document.getElementById('img2').hidden = true;
+  document.getElementById('img3').hidden = true;
+  document.getElementById('img1').hidden = true;
+  document.getElementById('img5').hidden = true;
+  document.getElementById('img6').hidden = true;
+  document.getElementById('img7').hidden = true;
+  document.getElementById('img8').hidden = true;
 });
 
 let emocion5 = document.getElementById('enojo');
@@ -116,6 +142,13 @@ emocion5.addEventListener('click', function mostrarTermometros() {
   document.getElementById('portfolioModal1').hidden = false;
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img5').hidden = false;
+  document.getElementById('img2').hidden = true;
+  document.getElementById('img3').hidden = true;
+  document.getElementById('img4').hidden = true;
+  document.getElementById('img1').hidden = true;
+  document.getElementById('img6').hidden = true;
+  document.getElementById('img7').hidden = true;
+  document.getElementById('img8').hidden = true;
 });
 
 let emocion6 = document.getElementById('angustia');
@@ -123,6 +156,13 @@ emocion6.addEventListener('click', function mostrarTermometros() {
   document.getElementById('portfolioModal1').hidden = false;
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img6').hidden = false;
+  document.getElementById('img2').hidden = true;
+  document.getElementById('img3').hidden = true;
+  document.getElementById('img4').hidden = true;
+  document.getElementById('img5').hidden = true;
+  document.getElementById('img1').hidden = true;
+  document.getElementById('img7').hidden = true;
+  document.getElementById('img8').hidden = true;
 });
 
 let emocion7 = document.getElementById('verguenza');
@@ -130,6 +170,13 @@ emocion7.addEventListener('click', function mostrarTermometros() {
   document.getElementById('portfolioModal1').hidden = false;
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img7').hidden = false;
+  document.getElementById('img2').hidden = true;
+  document.getElementById('img3').hidden = true;
+  document.getElementById('img4').hidden = true;
+  document.getElementById('img5').hidden = true;
+  document.getElementById('img6').hidden = true;
+  document.getElementById('img1').hidden = true;
+  document.getElementById('img8').hidden = true;
 });
 
 let emocion8 = document.getElementById('tristeza');
@@ -137,6 +184,13 @@ emocion8.addEventListener('click', function mostrarTermometros() {
   document.getElementById('portfolioModal1').hidden = false;
   document.getElementById('modal-content-nuevo').hidden = true;
   document.getElementById('img8').hidden = false;
+  document.getElementById('img2').hidden = true;
+  document.getElementById('img3').hidden = true;
+  document.getElementById('img4').hidden = true;
+  document.getElementById('img5').hidden = true;
+  document.getElementById('img6').hidden = true;
+  document.getElementById('img7').hidden = true;
+  document.getElementById('img1').hidden = true;
 });
 
 
@@ -477,7 +531,7 @@ const mostrarPantallaRegistro = () => {
 let buttonNo = document.getElementById ('button-no');
 buttonNo.addEventListener ('click', mostrarPantallaRegistro);
 
-let botonARegistro = document.getElementById ('ir-a-registro');
+let botonARegistro = document.getElementById ('boton-ir-final3');
 botonARegistro.addEventListener ('click', mostrarPantallaRegistro);
 
 const mostrarPantallaEficaciaAceptacion = () => {
@@ -490,7 +544,7 @@ buttonContinuar.addEventListener ('click', mostrarPantallaEficaciaAceptacion);
 
 
 const mostrarPantallaEvidencia = () => {
-  document.getElementById('modal-content-registro').hidden = true;
+  document.getElementById('modal-content-registro').hidden = false;
   document.getElementById('modal-content-evidencia').hidden = false;
   document.getElementById('modal-content-reevaluacion').hidden = true;
 }
@@ -502,14 +556,14 @@ botonEvidencia.addEventListener('click', mostrarPantallaEvidencia)
 
 const mostrarPantallaDialogo = () => {
   document.getElementById('modal-content-dialogo').hidden = false;
-  document.getElementById('modal-content-evidencia').hidden = true;
+  document.getElementById('modal-content-evidencia').hidden = false;
 }
 
 let botonYes = document.getElementById('yes');
 botonYes.addEventListener('click', mostrarPantallaDialogo);
 
 const mostrarPantallaAlternativo = () => {
-  document.getElementById('modal-content-dialogo').hidden = true;
+  document.getElementById('modal-content-dialogo').hidden = false;
   document.getElementById('modal-content-alternativo').hidden = false;
 }
 
@@ -520,6 +574,9 @@ botonCont.addEventListener('click', mostrarPantallaAlternativo);
 const mostrarPantallaEficacia2 = () => {
   document.getElementById('modal-content-eficacia2').hidden = false;
   document.getElementById('modal-content-alternativo').hidden = true;
+  document.getElementById('modal-content-dialogo').hidden = true;
+  document.getElementById('modal-content-evidencia').hidden = true;
+  document.getElementById('modal-content-registro').hidden = true;
 }
 
 let botonCont2 = document.getElementById('boton-ir-eficacia');
@@ -597,7 +654,6 @@ let continuarFinal = document.getElementById ('continuar-final');
 continuarFinal.addEventListener ('click', mostrarPantallaFinal);
 
 
-
 const frases = ["Qué podés agradecer hoy? Escribe tres cosas", 
 "Qué podés hacer hoy para ayudar a alguien? Escribe una acción concreta", 
 "Qué actividad placentera puedo hacer hoy para mí? Escríbela y planifícala para algún momento del día", 
@@ -610,3 +666,10 @@ document.getElementById ('final').appendChild (fraseRandom);
 fraseRandom.classList.add ('frase-random');
 
 console.log(random, frases[random]);
+
+
+let botonListo = document.getElementById ('listo');
+
+botonListo.addEventListener('click', _ => { 
+  location.reload();
+});
