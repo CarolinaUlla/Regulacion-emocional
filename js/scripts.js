@@ -497,6 +497,7 @@ botonNoEficacia.addEventListener ('click', mostrarPantallaSoluciones);
 const mostrarPantallaAceptacion = () => {
   document.getElementById('modal-content-cambio').hidden = true;
   document.getElementById('modal-content-aceptacion').hidden = false;
+  document.getElementById ('modal-content-reevaluacion').hidden = true;
 }
 
 let botonNo = document.getElementById('no');
@@ -629,7 +630,7 @@ const mostrarPantallaResolucion2 = () => {
 }
 
 let botonAfirmativo = document.getElementById('afirmativo');
-botonAfirmativo.addEventListener('click', mostrarPantallaResolucion2);
+botonAfirmativo.addEventListener('click', mostrarPantallaAceptacion);
 
 let botonNegativo = document.getElementById('negativo');
 botonNegativo.addEventListener('click', mostrarPantallaEvidencia)
