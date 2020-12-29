@@ -624,11 +624,6 @@ const mostrarPantallaReevaluacion = () => {
 
 }
 
-const mostrarPantallaResolucion2 = () => {
-  document.getElementById('modal-content-resolucion2').hidden = false;
-  document.getElementById('modal-content-reevaluacion').hidden = true;
-}
-
 let botonAfirmativo = document.getElementById('afirmativo');
 botonAfirmativo.addEventListener('click', mostrarPantallaAceptacion);
 
@@ -639,7 +634,6 @@ botonNegativo.addEventListener('click', mostrarPantallaEvidencia)
 const mostrarPantallaFinal = () => {
   document.getElementById('modal-content-felicitaciones').hidden = true;
   document.getElementById('modal-content-final').hidden = false;
-  document.getElementById('modal-content-resolucion2').hidden = true;
   document.getElementById ('modal-content-eficacia').hidden = true;
 
 };
@@ -647,9 +641,6 @@ const mostrarPantallaFinal = () => {
 let botonContinuarFin = document.getElementById('boton-ir-final');
 botonContinuarFin.addEventListener('click', mostrarPantallaFinal);
 
-
-let botonIrFinal = document.getElementById('boton-ir-final2');
-botonIrFinal.addEventListener('click', mostrarPantallaFinal);
 
 let continuarFinal = document.getElementById ('continuar-final');
 continuarFinal.addEventListener ('click', mostrarPantallaFinal);
