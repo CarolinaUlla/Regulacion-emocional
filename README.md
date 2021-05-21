@@ -1,8 +1,5 @@
 # Regulacion-emocional
 
-Proyecto en desarrollo creado para utilizarlo en el ambito de la psicologia. 
-El objetivo principal es el acompañamiento del paciente en ausencia del terapeuta.
-Tecnologias utilizadas: HTML, CSS, SCSS, Javascript, MySql. Implementacion de la libreria Bootstrap y responsive design.
+Project developed to be used in psychology fields. The main objective is the accompaniment of the patient in the absence of the therapist. Technologies used: HTML, CSS, SCSS and Javascript. Bootstrap library implementation and responsive design.
 
-
-DOMINIO: http://gestiondeemociones.atwebpages.com/
+URL: http://gestiondeemociones.atwebpages.com/
